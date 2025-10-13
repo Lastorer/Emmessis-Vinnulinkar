@@ -3,33 +3,119 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Vinnulinkar — Hrafn</title>
+  <title>Vinnulinkar — Hrafn Sigurðarson</title>
   <style>
-    :root{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
-    body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f3f4f6}
-    .card{width:100%;max-width:560px;padding:28px;border-radius:12px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.06);text-align:center}
-    h1{margin:0 0 12px;font-size:20px}
-    p{margin:0 0 18px;color:#555}
-    .links{display:grid;gap:10px}
-    .links a{display:block;padding:12px;border-radius:8px;text-decoration:none;font-weight:600;background:#111;color:#fff}
-    .meta{margin-top:14px;font-size:13px;color:#777}
-    @media(prefers-color-scheme:dark){
-      body{background:#0b0b0d} .card{background:#0f1113;color:#ddd} .links a{background:#1f2937}
+    :root {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0;
+      background: #f4f4f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      width: 100%;
+      max-width: 580px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.1);
+      text-align: center;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    p {
+      color: #555;
+      margin: 6px 0 24px;
+      font-size: 15px;
+    }
+    .section {
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .section h2 {
+      font-size: 17px;
+      margin: 0 0 10px;
+      color: #222;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+    .links {
+      display: grid;
+      gap: 10px;
+    }
+    .links a {
+      display: block;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      transition: 0.2s;
+    }
+    .links a:hover {
+      background: #222;
+    }
+    footer {
+      font-size: 13px;
+      color: #777;
+      margin-top: 20px;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0b0b0d; }
+      .card { background: #101213; color: #ddd; }
+      .section h2 { color: #eee; border-color: #333; }
+      .links a { background: #1f2937; }
+      .links a:hover { background: #374151; }
     }
   </style>
 </head>
 <body>
   <main class="card">
-    <h1>Vinnulinkar</h1>
-    <p>Skannaðu NFC-taggið eða opnaðu þessa síðu til að komast í allt sem tengist vinnunni.</p>
-    <div class="links">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdy_wyHUhxiqmfrJDBpEFU1aVAoY9XVIXuauXtQCQsKJ18XaA/viewform?usp=dialog" target="_blank" rel="noopener">Loftskilja Virkni</a>
-      <a href="https://docs.example.com/maintenance-log" target="_blank" rel="noopener">Viðhaldsskrá</a>
-      <a href="https://safety.example.com/checklist" target="_blank" rel="noopener">Öryggisskoðun</a>
-      <a href="https://forms.example.com/repair-request" target="_blank" rel="noopener">Viðgerðarbeiðni</a>
-      <a href="mailto:work@example.com">Senda tölvupóst</a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Emmess%C3%ADs_logo.png" alt="Emmessís" class="logo">
+    <h1>Vinnulinkar — Hrafn Sigurðarson</h1>
+    <p>Veldu flokk til að opna viðeigandi kerfi, skýrslur eða skrár.</p>
+
+    <div class="section">
+      <h2>Viðhald & Framleiðsla</h2>
+      <div class="links">
+        <a href="https://docs.example.com/maintenance-log" target="_blank">Viðhaldsskrá</a>
+        <a href="https://forms.example.com/repair-request" target="_blank">Viðgerðarbeiðni</a>
+        <a href="./verkferlar/">Verkferlar & Stilliblöð</a>
+      </div>
     </div>
-    <div class="meta">Síðan er einföld og hægt að uppfæra hvenær sem er.</div>
+
+    <div class="section">
+      <h2>Útleigðarvélar</h2>
+      <div class="links">
+        <a href="./utleigdar/">Vélar — yfirlit & skjöl</a>
+        <a href="https://forms.office.com/..." target="_blank">Skil eyðublað</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Almenn skjöl</h2>
+      <div class="links">
+        <a href="https://intranet.example.com" target="_blank">Intranet / Sameiginleg skjöl</a>
+        <a href="mailto:work@example.com">Senda vinnupóst</a>
+      </div>
+    </div>
+
+    <footer>
+      Síðan uppfærð {{dagsetning}} — Allt efni fyrir innri notkun.
+    </footer>
   </main>
 </body>
 </html>
