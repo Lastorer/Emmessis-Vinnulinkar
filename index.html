@@ -4,19 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Vinnulinkar — Hrafn Sigurðarson</title>
+
   <style>
+    /* ======== GRUNNSTÍLAR ======== */
     :root {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      color-scheme: light dark;
+      color-scheme: light dark; /* gerir síðuna sjálfvirkt ljós/myrk */
     }
+
     body {
       margin: 0;
-      background: #f4f4f5;
+      background: #f4f4f5; /* ljósgrár bakgrunnur */
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
     }
+
+    /* ======== KORTIÐ / RAMMINN ======== */
     .card {
       width: 100%;
       max-width: 580px;
@@ -26,23 +31,31 @@
       box-shadow: 0 6px 24px rgba(0,0,0,.1);
       text-align: center;
     }
+
+    /* ======== LÓGÓ ======== */
     .logo {
       width: 80px;
       margin-bottom: 12px;
     }
+
+    /* ======== TITILL OG UNDIRITLAR ======== */
     h1 {
       margin: 0;
       font-size: 22px;
     }
+
     p {
       color: #555;
       margin: 6px 0 24px;
       font-size: 15px;
     }
+
+    /* ======== HLUTAR (SECTION) ======== */
     .section {
       text-align: left;
       margin-bottom: 28px;
     }
+
     .section h2 {
       font-size: 17px;
       margin: 0 0 10px;
@@ -50,29 +63,37 @@
       border-bottom: 1px solid #ddd;
       padding-bottom: 4px;
     }
+
+    /* ======== LINKAR / HNAPPAR ======== */
     .links {
       display: grid;
       gap: 10px;
     }
+
     .links a {
       display: block;
       padding: 12px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      background: #111;
+      background: #111;   /* svartur hnappur */
       color: #fff;
       text-align: center;
       transition: 0.2s;
     }
+
     .links a:hover {
-      background: #222;
+      background: #222;   /* aðeins ljósari þegar mús yfir */
     }
+
+    /* ======== NEÐANTEXTI ======== */
     footer {
       font-size: 13px;
       color: #777;
       margin-top: 20px;
     }
+
+    /* ======== MYRKT ÞEMA ======== */
     @media (prefers-color-scheme: dark) {
       body { background: #0b0b0d; }
       .card { background: #101213; color: #ddd; }
@@ -82,47 +103,83 @@
     }
   </style>
 </head>
+
 <body>
   <main class="card">
-    <img src="<img class="logo-item" src="https://emmessis.is/wp-content/themes/emmessis/library/images/logo.svg" alt="Emmessís">" alt="Emmessís" class="logo">
+
+    <!-- LÓGÓ EFST (leiðréttur kóði, þú varst með tvöfalt <img>) -->
+    <img class="logo" src="https://emmessis.is/wp-content/themes/emmessis/library/images/logo.svg" alt="Emmessís">
+
+    <!-- TITILL OG LÝSING -->
     <h1>Vinnulinkar — Hrafn Sigurðarson</h1>
     <p>Veldu flokk til að opna viðeigandi kerfi, skýrslur eða skrár.</p>
 
+    <!-- ========================
+         HLUTI 1: VIÐHALD & FRAMLEIÐSLA
+    ========================= -->
     <div class="section">
       <h2>Viðhald & Framleiðsla</h2>
       <div class="links">
+        <!-- Opnar Fiix app beint ef uppsett, annars fer á vefútgáfu -->
         <a href="fiix://home" onclick="setTimeout(() => window.location='https://login.fiix.io', 1000)">Opna Fiix</a>
-        <a href="https://1912.fiix.software/guest-mr/login?tenantId=858b6708-5072-36f2-803c-f500871f4068&returnUrl=https:%2F%2F1912.fiix.software" target="_blank">Viðgerðarbeiðni</a>
+
+        <!-- Opnar beint viðgerðarbeiðni á Fiix vefnum -->
+        <a href="https://1912.fiix.software/guest-mr/login?tenantId=858b6708-5072-36f2-803c-f500871f4068&returnUrl=https:%2F%2F1912.fiix.software" target="_blank">
+          Viðgerðarbeiðni
+        </a>
       </div>
     </div>
 
+    <!-- ========================
+         HLUTI 2: VERKFERLAR & STILLIBLÖÐ
+    ========================= -->
     <div class="section">
       <h2>Verkferlar & Stilliblöð</h2>
       <div class="links">
-        <a href="https://1912is-my.sharepoint.com/:f:/g/personal/matthias_juliusson_nathan_is/EjAek2uqmWlMosPn0myxfusByzOWOjOl32vBwkAE-1uxaw?e=yEWksY">Stillingar F. Vinnslu</a>
-        <a href="https://1912is-my.sharepoint.com/:f:/g/personal/hrafn_sigurdsson_emmessis_is/EinbW3GFPgBKi93dYphQ4C8B1zVxjnP6MajRhefKuurOpA?e=FNG5n8">Vélar Hrafn</a>
-      </div>
-    </div>
-   
-    <div class="section">
-      <h2>Útleigðarvélar </h2>
-      <div class="links">
-       <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=y6DR87ifnkeOsZFM6GV3YiQhZJjckRtLlhPLyZmIUgFUNDBFUldMSUQwM1FORDk1Szk0NE5DTFBCSi4u" target="_blank">Skraning færsla</a>
-      <a href="https://1912is-my.sharepoint.com/:x:/g/personal/hrafn_sigurdsson_emmessis_is/EZ8ujKKwKNFEq2iRaAQeMLABFwsUkz7Wkdt5PetbZw9VkA?e=YCPlUV" target="_blank">Færslur utleigðarvelar</a>
+        <a href="https://1912is-my.sharepoint.com/:f:/g/personal/matthias_juliusson_nathan_is/EjAek2uqmWlMosPn0myxfusByzOWOjOl32vBwkAE-1uxaw?e=yEWksY">
+          Stillingar F. Vinnslu
+        </a>
+        <a href="https://1912is-my.sharepoint.com/:f:/g/personal/hrafn_sigurdsson_emmessis_is/EinbW3GFPgBKi93dYphQ4C8B1zVxjnP6MajRhefKuurOpA?e=FNG5n8">
+          Vélar Hrafn
+        </a>
       </div>
     </div>
 
+    <!-- ========================
+         HLUTI 3: ÚTLEIGÐARVÉLAR
+    ========================= -->
     <div class="section">
-      <h2>Spruningalistar Hrafn </h2>
+      <h2>Útleigðarvélar</h2>
       <div class="links">
-       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdy_wyHUhxiqmfrJDBpEFU1aVAoY9XVIXuauXtQCQsKJ18XaA/viewform?usp=header" target="_blank">Er lofskilja að virka?</a>
-          </div>
-    </div>
-    
-        <a href="mailto:Hrafn.sigurdsson@emmessis.is">Senda vinnupóst</a>
+        <!-- Form til að skrá færslu -->
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=y6DR87ifnkeOsZFM6GV3YiQhZJjckRtLlhPLyZmIUgFUNDBFUldMSUQwM1FORDk1Szk0NE5DTFBCSi4u" target="_blank">
+          Skráning færsla
+        </a>
+
+        <!-- Excel skjal með yfirlit yfir útleigðarvélar -->
+        <a href="https://1912is-my.sharepoint.com/:x:/g/personal/hrafn_sigurdsson_emmessis_is/EZ8ujKKwKNFEq2iRaAQeMLABFwsUkz7Wkdt5PetbZw9VkA?e=YCPlUV" target="_blank">
+          Færslur útleigðarvélar
+        </a>
       </div>
     </div>
 
+    <!-- ========================
+         HLUTI 4: SPURNINGALISTAR
+    ========================= -->
+    <div class="section">
+      <h2>Spurningalistar Hrafn</h2>
+      <div class="links">
+        <!-- Google Form fyrir eftirlit -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdy_wyHUhxiqmfrJDBpEFU1aVAoY9XVIXuauXtQCQsKJ18XaA/viewform?usp=header" target="_blank">
+          Er lofskilja að virka?
+        </a>
+      </div>
+    </div>
+
+    <!-- VINNUPOSTUR -->
+    <a href="mailto:Hrafn.sigurdsson@emmessis.is">Senda vinnupóst</a>
+
+    <!-- NEÐANTEXTI -->
     <footer>
       Síðan uppfærð {{14.10.2025}} — Allt efni fyrir innri notkun.
     </footer>
