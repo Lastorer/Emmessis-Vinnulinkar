@@ -209,7 +209,7 @@
     
 
     <!-- VINNUPOSTUR -->
-    <a href="mailto:Hrafn.sigurdsson@emmessis.is">Senda vinnupóst</a><!-- VINNUPOSTUR -->
+    
   <div style="text-align:center;">
   <a href="mailto:Hrafn.sigurdsson@emmessis.is" class="email-link">Senda vinnupóst</a>
   </div>
@@ -220,18 +220,14 @@
     </footer>
   </main>
 </body>
-  <script>
+ <script>
 function setLastVisit(id) {
+  document.getElementById(id).style.background = "#111";
   localStorage.setItem(id, Date.now());
   setTimeout(() => window.location.href = document.getElementById(id).href, 100);
 }
 
-function updateTimers()if (diffDays >= 7) {
-  textElement.style.color = "red";
-  el.querySelector("a").style.background = "#b91c1c"; // dökkrauður hnappur
-  el.querySelector("a").style.border = "1px solid #991b1b";
-  textElement.textContent += " ⚠️ þarf að fara yfir";
-} {
+function updateTimers() {
   const items = document.querySelectorAll("[data-id]");
   const now = Date.now();
 
@@ -246,6 +242,8 @@ function updateTimers()if (diffDays >= 7) {
 
       if (diffDays >= 7) {
         textElement.style.color = "red";
+        el.querySelector("a").style.background = "#b91c1c"; // rauður hnappur
+        el.querySelector("a").style.border = "1px solid #991b1b";
         textElement.textContent += " ⚠️ þarf að fara yfir";
       } else {
         textElement.style.color = "#666";
