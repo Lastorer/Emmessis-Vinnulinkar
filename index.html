@@ -168,15 +168,27 @@
     ========================= -->
     <div class="section">
       <h2>Spurningalistar Hrafn</h2>
-      <div class="links">
-        <!-- Google Form fyrir eftirlit -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdy_wyHUhxiqmfrJDBpEFU1aVAoY9XVIXuauXtQCQsKJ18XaA/viewform?usp=header" target="_blank">
-          Er lofskilja að virka?  </a>
-          <a href="https://forms.office.com/e/QUMYC0gP76" target="_blank">
-          Loftpressaeftirlit
-        </a>
-      </div>
-    </div>
+     <div class="links">
+
+  <div data-id="spurningalisti1">
+    <a id="spurningalisti1"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSdy_wyHUhxiqmfrJDBpEFU1aVAoY9XVIXuauXtQCQsKJ18XaA/viewform?usp=header"
+       onclick="setLastVisit('spurningalisti1')" target="_blank">
+       Spurningalisti – Lofskilja
+    </a>
+    <div class="last-visit" style="font-size:13px;margin-top:4px;"></div>
+  </div>
+
+  <div data-id="spurningalisti2">
+    <a id="spurningalisti2"
+       href="https://forms.office.com/Pages/ResponsePage.aspx?id=y6DR87ifnkeOsZFM6GV3YiQhZJjckRtLlhPLyZmIUgFUNDBFUldMSUQwM1FORDk1Szk0NE5DTFBCSi4u"
+       onclick="setLastVisit('spurningalisti2')" target="_blank">
+       Spurningalisti – Loftpressa
+    </a>
+    <div class="last-visit" style="font-size:13px;margin-top:4px;"></div>
+  </div>
+
+</div>
 
     <!-- VINNUPOSTUR -->
     <a href="mailto:Hrafn.sigurdsson@emmessis.is">Senda vinnupóst</a>
@@ -187,4 +199,38 @@
     </footer>
   </main>
 </body>
+  <script>
+function setLastVisit(id) {
+  localStorage.setItem(id, Date.now());
+  setTimeout(() => window.location.href = document.getElementById(id).href, 100);
+}
+
+function updateTimers() {
+  const items = document.querySelectorAll("[data-id]");
+  const now = Date.now();
+
+  items.forEach(el => {
+    const id = el.getAttribute("data-id");
+    const last = localStorage.getItem(id);
+    const textElement = el.querySelector(".last-visit");
+
+    if (last) {
+      const diffDays = Math.floor((now - parseInt(last)) / (1000 * 60 * 60 * 24));
+      textElement.textContent = `Síðast heimsótt: ${diffDays} dag(a) síðan`;
+
+      if (diffDays >= 7) {
+        textElement.style.color = "red";
+        textElement.textContent += " ⚠️ þarf að fara yfir";
+      } else {
+        textElement.style.color = "#666";
+      }
+    } else {
+      textElement.textContent = "Ekki heimsótt enn";
+      textElement.style.color = "#666";
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", updateTimers);
+</script>
 </html>
