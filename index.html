@@ -205,7 +205,12 @@ function setLastVisit(id) {
   setTimeout(() => window.location.href = document.getElementById(id).href, 100);
 }
 
-function updateTimers() {
+function updateTimers()if (diffDays >= 7) {
+  textElement.style.color = "red";
+  el.querySelector("a").style.background = "#b91c1c"; // dökkrauður hnappur
+  el.querySelector("a").style.border = "1px solid #991b1b";
+  textElement.textContent += " ⚠️ þarf að fara yfir";
+} {
   const items = document.querySelectorAll("[data-id]");
   const now = Date.now();
 
