@@ -1,1 +1,332 @@
+<!doctype html>
+<html lang="is">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vinnulinkar — Hrafn Sigurðarson</title>
 
+  <style>
+    /* ======== GRUNNSTÍLAR ======== */
+    :root {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color-scheme: light dark; /* gerir síðuna sjálfvirkt ljós/myrk */
+    }
+
+    body {
+      margin: 0;
+      background: #f4f4f5; /* ljósgrár bakgrunnur */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* ======== KORTIÐ / RAMMINN ======== */
+    .card {
+      width: 100%;
+      max-width: 580px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.1);
+      text-align: center;
+    }
+
+    /* ======== LÓGÓ ======== */
+    .logo {
+      width: 80px;
+      margin-bottom: 12px;
+    }
+
+    /* ======== TITILL OG UNDIRITLAR ======== */
+    h1 { margin: 0; font-size: 22px; }
+    p  { color: #555; margin: 6px 0 24px; font-size: 15px; }
+
+    /* ======== HLUTAR (SECTION) ======== */
+    .section { text-align: left; margin-bottom: 28px; }
+    .section h2 {
+      font-size: 17px;
+      margin: 0 0 10px;
+      color: #222;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+
+    /* ======== LINKAR / HNAPPAR ======== */
+    .links { display: grid; gap: 10px; }
+    .links a {
+      display: block;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      background: #111;   /* svartur hnappur */
+      color: #fff;
+      text-align: center;
+      transition: 0.2s;
+    }
+    .links a:hover { background: #222; }
+
+    .last-visit { font-size:13px; margin-top:4px; color:#666; }
+
+    .email-link {
+      display: inline-block;
+      margin-top: 24px;
+      margin-bottom: 16px;
+      text-align: center;
+      background: #444;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .email-link:hover { background: #222; }
+
+    .controls { margin-top: 8px; }
+    .reset-btn {
+      display:inline-block;
+      margin-top:8px;
+      padding:6px 10px;
+      border-radius:8px;
+      background:#eee;
+      color:#111;
+      font-weight:600;
+      text-decoration:none;
+      cursor:pointer;
+      border:1px solid #ddd;
+    }
+    .reset-btn:hover { background:#ddd; }
+
+    /* ======== NEÐANTEXTI ======== */
+    footer { font-size: 13px; color: #777; margin-top: 20px; }
+
+    /* ======== MYRKT ÞEMA ======== */
+    @media (prefers-color-scheme: dark) {
+      body { background: #0b0b0d; }
+      .card { background: #101213; color: #ddd; }
+      .section h2 { color: #eee; border-color: #333; }
+      .links a { background: #1f2937; }
+      .links a:hover { background: #374151; }
+      .reset-btn { background:#222; color:#ddd; border-color:#333; }
+      .reset-btn:hover { background:#2b2b2b; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+
+    <!-- LÓGÓ EFST -->
+    <img class="logo" src="https://emmessis.is/wp-content/themes/emmessis/library/images/logo.svg" alt="Emmessís">
+
+    <!-- TITILL OG LÝSING -->
+    <h1>Vinnulinkar — Hrafn Sigurðarson</h1>
+    <p>Veldu flokk til að opna viðeigandi kerfi, skýrslur eða skrár.</p>
+
+    <!-- ========================
+         HLUTI 1: VIÐHALD & FRAMLEIÐSLA
+    ========================= -->
+    <div class="section">
+      <h2>Viðhald & Framleiðsla</h2>
+      <div class="links">
+        <a href="fiix://home" onclick="setLastVisit('fiix-home'); setTimeout(() => window.location='https://auth.fiix.software/login?state=hKFo2SBjVGxDWU9tbm03eDV0eHFDSXpOdHVieUhxXzdCUm1JZ6FupWxvZ2luo3RpZNkgX2gzbjJUQkFTTEdqNlk1ejZDcGFLM0JZeGlGbVRnVVGjY2lk2SB6cndjVnp0bmlPUXJ3RjhVNXJ1VGxEYlo5bWNkd3dXaQ&client=zrwcVztniOQrwF8U5ruTlDbZ9mcdwwWi&protocol=oauth2&response_type=code&audience=https:%2F%2F1912.fiix.software&connection=e5574247-0920-4c4c-bd12-0e500f45adb8&redirect_uri=https:%2F%2F1912.fiix.software%2Flogin%2Fcallback&scope=openid%20profile%20email&auth0Client=eyJuYW1lIjoiYXV0aDAuanMiLCJ2ZXJzaW9uIjoiOS4yOC4wIn0%3D', 1000)">Opna Fiix</a>
+
+        <a href="https://1912.fiix.software/guest-mr/login?tenantId=858b6708-5072-36f2-803c-f500871f4068&returnUrl=https:%2F%2F1912.fiix.software" target="_blank" onclick="setLastVisit('vidgerdarbeidni')">
+          Viðgerðarbeiðni
+        </a>
+      </div>
+    </div>
+
+    <!-- ========================
+         HLUTI 2: VERKFERLAR & STILLIBLÖÐ
+    ========================= -->
+    <div class="section">
+      <h2>Verkferlar & Stilliblöð</h2>
+      <div class="links">
+        <a href="https://1912is-my.sharepoint.com/:f:/g/personal/matthias_juliusson_nathan_is/EjAek2uqmWlMosPn0myxfusByzOWOjOl32vBwkAE-1uxaw?e=yEWksY" target="_blank" onclick="setLastVisit('stillingar-vinnslu')">
+          Stillingar F. Vinnslu
+        </a>
+        <a href="https://1912is-my.sharepoint.com/:f:/g/personal/hrafn_sigurdsson_emmessis_is/EinbW3GFPgBKi93dYphQ4C8B1zVxjnP6MajRhefKuurOpA?e=FNG5n8" target="_blank" onclick="setLastVisit('velar-hrafn')">
+          Vélar Hrafn
+        </a>
+      </div>
+    </div>
+
+    <!-- ========================
+         HLUTI 3: ÚTLEIGÐARVÉLAR
+    ========================= -->
+    <div class="section">
+      <h2>Útleigðarvélar</h2>
+      <div class="links">
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=y6DR87ifnkeOsZFM6GV3YiQhZJjckRtLlhPLyZmIUgFUNDBFUldMSUQwM1FORDk1Szk0NE5DTFBCSi4u" target="_blank" onclick="setLastVisit('utleig-skraning')">
+          Skráning færsla
+        </a>
+
+        <a href="https://1912is-my.sharepoint.com/:x:/g/personal/hrafn_sigurdsson_emmessis_is/EZ8ujKKwKNFEq2iRaAQeMLABFwsUkz7Wkdt5PetbZw9VkA?e=YCPlUV" target="_blank" onclick="setLastVisit('utleig-faerslur')">
+          Færslur útleigðarvélar
+        </a>
+      </div>
+    </div>
+
+    <!-- ========================
+         HLUTI 4: SPURNINGALISTAR
+    ========================= -->
+    <div class="section">
+      <h2>Spurningalistar Hrafn</h2>
+      <div class="links">
+        <div data-id="spurningalisti1">
+          <a id="spurningalisti1"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSdy_wyHUhxiqmfrJDBpEFU1aVAoY9XVIXuauXtQCQsKJ18XaA/viewform?usp=header"
+             onclick="setLastVisit('spurningalisti1')" target="_blank">
+             Spurningalisti – Lofskilja
+          </a>
+          <div class="last-visit"></div>
+        </div>
+
+        <div data-id="spurningalisti2">
+          <a id="spurningalisti2"
+             href="https://forms.office.com/e/QUMYC0gP76"
+             onclick="setLastVisit('spurningalisti2')" target="_blank">
+             Spurningalisti – Loftpressa
+          </a>
+          <div class="last-visit"></div>
+        </div>
+
+        <div data-id="spurningalisti3">
+          <a id="spurningalisti3"
+             href="https://forms.office.com/Pages/ResponsePage.aspx?id=y6DR87ifnkeOsZFM6GV3YiQhZJjckRtLlhPLyZmIUgFUODFTTFg5Wk9YTDNNOEZCT1UzQjFTNTQ4Vi4u"
+             onclick="setLastVisit('spurningalisti3')" target="_blank">
+             Spurningalisti – Vélasalur Eftirlit
+          </a>
+          <div class="last-visit"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VINNUPOSTUR (miðjaður hnappur) -->
+    <div style="text-align:center;">
+      <a href="mailto:Hrafn.sigurdsson@emmessis.is" class="email-link">Senda vinnupóst</a>
+    </div>
+
+    <!-- ENDURSETJA / CONTROLS -->
+    <div class="controls">
+      <button class="reset-btn" onclick="resetTimers()">Endurstilla tímastimpla (prófa)</button>
+    </div>
+
+    <!-- NEÐANTEXTI -->
+    <footer>
+      Síðan uppfærð 14.10.2025 — Allt efni fyrir innri notkun.
+    </footer>
+  </main>
+
+  <script>
+  // Skráð í localStorage hvern link sem þú smellir á.
+  function setLastVisit(id) {
+    // Endurstilla hnappalit á þann link (ef hann var rauður)
+    const linkEl = document.getElementById(id);
+    if (linkEl) {
+      linkEl.style.background = "#111";
+      linkEl.style.border = "none";
+    }
+
+    localStorage.setItem(id, Date.now());
+    setTimeout(() => {
+      // opna linkinn eftir stutta bið svo localStorage nái að vista
+      window.open(linkEl ? linkEl.href : "#", "_blank");
+    }, 120);
+  }
+
+  // Uppfærir texta undir hverjum link (síðast heimsótt X dögum síðan)
+  function updateTimers() {
+    const items = document.querySelectorAll("[data-id]");
+    const now = Date.now();
+
+    items.forEach(el => {
+      const id = el.getAttribute("data-id");
+      const last = localStorage.getItem(id);
+      const textElement = el.querySelector(".last-visit");
+
+      if (last) {
+        const diffDays = Math.floor((now - parseInt(last)) / (1000 * 60 * 60 * 24));
+        textElement.textContent = `Síðast heimsótt: ${diffDays} dag(a) síðan`;
+
+        if (diffDays >= 7) {
+          textElement.style.color = "red";
+          const a = el.querySelector("a");
+          if (a) {
+            a.style.background = "#b91c1c"; // rauður hnappur
+            a.style.border = "1px solid #991b1b";
+          }
+          textElement.textContent += " ⚠️ þarf að fara yfir";
+        } else {
+          textElement.style.color = "#666";
+        }
+      } else {
+        textElement.textContent = "Ekki heimsótt enn";
+        textElement.style.color = "#666";
+      }
+    });
+  }
+
+  // Hreinsar öll viðkomandi timastimpla (prófa eða reset)
+  function resetTimers() {
+    const keys = ["spurningalisti1","spurningalisti2","spurningalisti3",
+                  "fiix-home","vidgerdarbeidni","stillingar-vinnslu","velar-hrafn",
+                  "utleig-skraning","utleig-faerslur"];
+    keys.forEach(k => localStorage.removeItem(k));
+    updateTimers();
+    alert("Tímastimplar hreinsaðir.");
+  }
+
+  document.addEventListener("DOMContentLoaded", updateTimers);function setLastVisit(id) {
+  localStorage.setItem(id, Date.now());
+  setTimeout(() => {
+    const link = document.getElementById(id);
+    if (link && !link.classList.contains("alert-link")) {
+      window.location.href = link.href;
+    }
+  }, 100);
+}
+
+function updateTimers() {
+  const items = document.querySelectorAll("[data-id]");
+  const now = Date.now();
+
+  items.forEach(el => {
+    const id = el.getAttribute("data-id");
+    const last = localStorage.getItem(id);
+    const textElement = el.querySelector(".last-visit");
+    const link = el.querySelector("a");
+
+    if (last) {
+      const diffDays = Math.floor((now - parseInt(last)) / (1000 * 60 * 60 * 24));
+      textElement.textContent = `Síðast heimsótt: ${diffDays} dag(a) síðan`;
+
+      // Rauður ef meira en 7 dagar
+      if (diffDays >= 1) {
+        textElement.style.color = "red";
+        link.style.background = "#b91c1c";
+        link.style.border = "1px solid #991b1b";
+        textElement.textContent += " ⚠️ þarf að fara yfir";
+
+        // Breyta í tölvupóst link
+        link.href = `mailto:Hrafn.sigurdsson@emmessis.is?subject=Viðhald%20athugun%20-%20${id}&body=Þessi%20tengill%20hefur%20ekki%20verið%20opnaður%20í%20${diffDays}%20daga.%20Athugaðu%20viðhald.`;
+        link.classList.add("alert-link");
+      } else {
+        textElement.style.color = "#666";
+        link.classList.remove("alert-link");
+      }
+    } else {
+      // Ef engin heimsókn → fela textann
+      textElement.textContent = "";
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", updateTimers);
+</script>
+  </script>
+</body>
+</html>
