@@ -250,73 +250,64 @@
   <!-- ====================================
        JAVASCRIPT — VIRKNI FYRIR HEIMSÓKNIR
   ==================================== -->
-  <script>
-  /**
-   * Skráir heimsókn og uppfærir LocalStorage
-   */
-  function setLastVisit(id) {
-    localStorage.setItem(id, Date.now());
-    setTimeout(() => {
-      const link = document.getElementById(id);
-      if (link && !link.classList.contains("alert-link")) {
-        window.location.href = link.href;
-      }
-    }, 100);
-  }
+<script>
+function setLastVisit(id) {
+  localStorage.setItem(id, Date.now());
+  setTimeout(() => {
+    const link = document.getElementById(id);
+    if (link) window.location.href = link.href;
+  }, 100);
+}
 
-  /**
-   * Uppfærir “Síðast heimsótt” og setur viðvörun eftir 7 daga
-   */
-  function updateTimers() {
-    const items = document.querySelectorAll("[data-id]");
-    const now = Date.now();
+function updateTimers() {
+  const items = document.querySelectorAll("[data-id]");
+  const now = Date.now();
 
-    items.forEach(el => {
-      const id = el.getAttribute("data-id");
-      const last = localStorage.getItem(id);
-      const textElement = el.querySelector(".last-visit");
-      const link = el.querySelector("a");
+  items.forEach(el => {
+    const id = el.getAttribute("data-id");
+    const last = localStorage.getItem(id);
+    const textElement = el.querySelector(".last-visit");
+    const link = el.querySelector("a");
 
-      if (last) {
-        const diffDays = Math.floor((now - parseInt(last)) / (1000 * 60 * 60 * 24));
-        textElement.textContent = `Síðast heimsótt: ${diffDays} dag(a) síðan`;
+    if (last) {
+      const diffDays = Math.floor((now - parseInt(last)) / (1000 * 60 * 60 * 24));
+      textElement.textContent = `Síðast heimsótt: ${diffDays} dag(a) síðan`;
 
-        // Rauður ef meira en 7 dagar
-        if (diffDays >= 7) {
-          textElement.style.color = "red";
-          link.style.background = "#b91c1c";
-          link.style.border = "1px solid #991b1b";
-          textElement.textContent += " ⚠️ þarf að fara yfir";
-
-          // Breyta í tölvupóst link
-          link.href = `mailto:Hrafn.sigurdsson@emmessis.is?subject=Viðhald%20athugun%20-%20${id}&body=Þessi%20tengill%20hefur%20ekki%20verið%20opnaður%20í%20${diffDays}%20daga.%20Athugaðu%20viðhald.`;
-          link.classList.add("alert-link");
-        } else {
-          textElement.style.color = "#666";
-          link.classList.remove("alert-link");
-        }
+      // Litur eftir aldri heimsóknar
+      if (diffDays <= 3) {
+        link.style.background = "#15803d"; // grænt
+        link.style.border = "1px solid #166534";
+        textElement.style.color = "#15803d";
+      } else if (diffDays <= 6) {
+        link.style.background = "#ca8a04"; // gullt
+        link.style.border = "1px solid #a16207";
+        textElement.style.color = "#ca8a04";
       } else {
-        textElement.textContent = "Ekki heimsótt enn";
-        textElement.style.color = "#666";
+        link.style.background = "#b91c1c"; // rautt
+        link.style.border = "1px solid #991b1b";
+        textElement.style.color = "red";
+        textElement.textContent += " ⚠️ þarf að fara yfir";
       }
-    });
-  }
+    } else {
+      textElement.textContent = "Ekki heimsótt enn";
+      textElement.style.color = "#666";
+    }
+  });
+}
 
-  /**
-   * Hreinsar alla tímastimpla í localStorage
-   */
-  function resetTimers() {
-    const keys = [
-      "spurningalisti1","spurningalisti2","spurningalisti3",
-      "fiix-home","vidgerdarbeidni","stillingar-vinnslu",
-      "velar-hrafn","utleig-skraning","utleig-faerslur"
-    ];
-    keys.forEach(k => localStorage.removeItem(k));
-    updateTimers();
-    alert("Tímastimplar hreinsaðir.");
-  }
+function resetTimers() {
+  const keys = [
+    "spurningalisti1","spurningalisti2","spurningalisti3",
+    "fiix-home","vidgerdarbeidni","stillingar-vinnslu",
+    "velar-hrafn","utleig-skraning","utleig-faerslur"
+  ];
+  keys.forEach(k => localStorage.removeItem(k));
+  updateTimers();
+  alert("Tímastimplar hreinsaðir.");
+}
 
-  document.addEventListener("DOMContentLoaded", updateTimers);
-  </script>
+document.addEventListener("DOMContentLoaded", updateTimers);
+</script>
+
 </body>
 </html>
