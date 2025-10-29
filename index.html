@@ -278,10 +278,12 @@ function updateTimers() {
         link.style.background = "#15803d"; // grænt
         link.style.border = "1px solid #166534";
         textElement.style.color = "#15803d";
-      } else if (diffDays <= 6) {
+        textElement.textContent += " Nýlega gert";
+      } else if (diffDays <= 8) {
         link.style.background = "#ca8a04"; // gullt
         link.style.border = "1px solid #a16207";
         textElement.style.color = "#ca8a04";
+        textElement.textContent += " Má hafa í huga";
       } else {
         link.style.background = "#b91c1c"; // rautt
         link.style.border = "1px solid #991b1b";
